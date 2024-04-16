@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useRef } from 'react';
 import { Form, Button, Table, Container, Row, Col  } from 'react-bootstrap';
 import axios from 'axios';
+import './App.css'
 
 const URL = "/api";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -84,9 +85,9 @@ function App() {
   return (
     <Container>
     
-      <h1>Flask Based CRUD Application</h1>
+      <h1 style={{margin:"20px 0 20px 0"}}>Flask Based CRUD Application</h1>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicName">
+        <Form.Group controlId="formBasicName" className="form-field">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter name" value={name} onChange={event => setName(event.target.value)} />
         </Form.Group>
@@ -97,7 +98,7 @@ function App() {
           {emailError && <Form.Text className="text-danger">{emailError}</Form.Text>}
         </Form.Group>
 
-        <Button variant="primary" type="submit" ref={addKey} >
+        <Button className="button" variant="primary" type="submit" ref={addKey} >
           Add User
         </Button>
       </Form>
